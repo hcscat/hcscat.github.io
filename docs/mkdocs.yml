@@ -1,0 +1,25 @@
+site_name: Notes
+site_url: https://hcscat.github.io/notes/
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+nav:
+  - Home: index.md
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
