@@ -38,7 +38,7 @@ Always re-check the current repository state before making assumptions.
 - Portfolio project case studies: add or edit files in `site/src/content/projects/`.
 - Project required frontmatter: `title`, `description`, `pubDate`, `period`, `role`, `stack`, `summary`, `highlights`, `order`.
 - Project optional/defaulted frontmatter: `updatedDate`, `featured`, `confidentialityNote`.
-- Home featured projects come from the `projects` collection where `featured` is true, sorted by `order`.
+- Project listing pages come from the `projects` collection, sorted by `order`.
 - Header navigation and social links: edit `site/src/components/Header.astro`.
 - Footer name/social links: edit `site/src/components/Footer.astro`.
 - SEO/Open Graph defaults: edit `site/src/components/BaseHead.astro`.
