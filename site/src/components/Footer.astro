@@ -5,8 +5,8 @@ const today = new Date();
 <footer>
 	<p>&copy; {today.getFullYear()} HCS Portfolio. All rights reserved.</p>
 	<p>
-		본 사이트의 이력, 글, 포트폴리오 내용은 작성자에게 권리가 있습니다. 채용 및 비즈니스 검토
-		목적의 열람은 가능하지만, 사전 허가 없는 편집, 복제, 재배포, 2차 가공은 허용하지 않습니다.
+		<span class="rights-line">본 사이트의 이력, 글, 포트폴리오 내용은 작성자에게 권리가 있습니다.</span>
+		<span class="rights-line">채용 및 비즈니스 검토 목적의 열람은 가능하지만, 사전 허가 없는 편집, 복제, 재배포, 2차 가공은 허용하지 않습니다.</span>
 	</p>
 </footer>
 <style>
@@ -25,5 +25,8 @@ const today = new Date();
 		margin-bottom: 0;
 		font-size: 0.9rem;
 		line-height: 1.6;
+	}
+	.rights-line {
+		display: block;
 	}
 </style>
