@@ -16,9 +16,6 @@ const posts = (await getCollection('blog')).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
-			main {
-				width: 960px;
-			}
 			.blog-list {
 				display: grid;
 				grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -9,6 +9,11 @@
 	--box-shadow: 0 12px 30px rgba(0, 0, 0, 6%);
 }
 
+html {
+	overflow-y: auto;
+	scrollbar-gutter: stable;
+}
+
 @font-face {
 	font-family: "Atkinson";
 	src: url("/fonts/atkinson-regular.woff") format("woff");
@@ -45,14 +50,13 @@ body {
 }
 
 main {
-	width: 760px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3.5em 1em 5em;
+	width: min(1080px, calc(100% - 3rem));
+	margin: 0 auto;
+	padding: 4rem 0 5rem;
 }
 
 main.wide {
-	width: 1080px;
+	width: min(1080px, calc(100% - 3rem));
 }
 
 h1,
@@ -177,7 +181,7 @@ hr {
 	grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
 	gap: 2rem;
 	align-items: stretch;
-	padding: 3em 0 2.4em;
+	padding: 0 0 2.4em;
 	border-bottom: 1px solid rgb(var(--gray-light));
 }
 
@@ -464,6 +468,7 @@ hr {
 }
 
 .prose {
+	max-width: 760px;
 	color: rgb(var(--gray-dark));
 }
 
@@ -495,12 +500,13 @@ hr {
 	}
 
 	main {
-		padding: 2em 0 4em;
+		width: min(1080px, calc(100% - 2rem));
+		padding: 2.4rem 0 4rem;
 	}
 
 	.home-hero {
 		grid-template-columns: 1fr;
-		padding-top: 1.4em;
+		padding-top: 0;
 	}
 
 	.section-grid.two,

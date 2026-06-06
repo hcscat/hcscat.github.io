@@ -15,11 +15,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
 			.hero-image {
 				width: 100%;
 			}
@@ -31,15 +26,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.prose {
 				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
+				max-width: 100%;
+				margin: 0;
+				padding: 0;
 				color: rgb(var(--gray-dark));
 			}
 			.title {
 				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
+				padding: 0 0 1em;
 				line-height: 1;
 			}
 			.title h1 {
