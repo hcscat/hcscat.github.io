@@ -1,48 +1,109 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const projects = (await getCollection('projects'))
+	.filter((project) => project.data.featured)
+	.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+		<main class="wide">
+			<section class="hero">
+				<p class="eyebrow">Java/Spring · Enterprise Web · QA-minded Engineering</p>
+				<h1>품질 관점으로 업무 시스템을 분석하고 개발합니다.</h1>
+				<p class="lead">
+					QA/QC 기반에서 Java/Spring 업무 시스템 개발로 전환했고, 공공·이커머스·기업
+					솔루션 환경에서 화면, 백엔드, DB 흐름, 운영 이슈를 함께 다뤄왔습니다.
+				</p>
+				<div class="button-row">
+					<a class="button primary" href="/projects">프로젝트 보기</a>
+					<a class="button" href="/about">경력 요약 보기</a>
+					<a class="button" href="/about#contact">연락처 보기</a>
+				</div>
+			</section>
+
+			<section class="section-grid two">
+				<div class="panel">
+					<p class="eyebrow">Current Focus</p>
+					<h2>SAP UI5/Fiori 운영개발</h2>
+					<p>
+						최근 경험으로 JavaScript, SAP UI5/Fiori, CSS, Git 기반 기업 솔루션
+						프론트엔드 운영개발을 보강하고 있습니다. 공개 전 상세 업무 범위는 비식별화해
+						정리합니다.
+					</p>
+				</div>
+				<div class="panel">
+					<p class="eyebrow">Positioning</p>
+					<h2>업무 화면과 백엔드를 함께 보는 개발자</h2>
+					<p>
+						Nexacro, exBuilder6, JSP, SAP UI5/Fiori 등 엔터프라이즈 UI 환경과 Java,
+						Spring, MyBatis, Oracle, MSSQL 기반 업무 로직을 함께 다룬 경험이 강점입니다.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<div class="section-title">
+					<p class="eyebrow">Core Stack</p>
+					<h2>전면 배치할 기술</h2>
+				</div>
+				<ul class="stack-list">
+					<li>Java</li>
+					<li>Spring</li>
+					<li>MyBatis</li>
+					<li>JavaScript</li>
+					<li>JSP</li>
+					<li>Nexacro</li>
+					<li>exBuilder6</li>
+					<li>SAP UI5/Fiori</li>
+					<li>Oracle</li>
+					<li>MSSQL</li>
+				</ul>
+			</section>
+
+			<section>
+				<div class="section-title with-link">
+					<div>
+						<p class="eyebrow">Featured Projects</p>
+						<h2>대표 프로젝트</h2>
+					</div>
+					<a href="/projects">전체 보기</a>
+				</div>
+				<div class="project-list">
+					{
+						projects.map((project) => (
+							<a class="project-card" href={`/projects/${project.id}/`}>
+								<span>{project.data.period}</span>
+								<h3>{project.data.title}</h3>
+								<p>{project.data.summary}</p>
+								<ul>
+									{project.data.highlights.slice(0, 3).map((highlight) => <li>{highlight}</li>)}
+								</ul>
+							</a>
+						))
+					}
+				</div>
+			</section>
+
+			<section class="panel">
+				<p class="eyebrow">AI Workflow</p>
+				<h2>AI는 포장보다 작업 구조화에 사용합니다.</h2>
+				<p>
+					채용 인텔리전스 플랫폼, SAP/Claude Code 업무 가이드, multi-agent-work 스킬은
+					AI를 최종 판단자로 쓰기보다 문서화, 역할 분담, 검토 루프, 반복 작업 자동화에
+					활용한 사례로 정리합니다.
+				</p>
+			</section>
 		</main>
 		<Footer />
 	</body>

@@ -1,63 +1,110 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="ko">
+	<head>
+		<BaseHead title="About | HCS Portfolio" description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="page-heading">
+				<p class="eyebrow">About</p>
+				<h1>황창식</h1>
+				<p class="lead">
+					품질 관점을 가진 Java/Spring 기반 업무 시스템 개발자. QA/QC 경험을 바탕으로
+					기존 시스템 분석, 변경 영향도 확인, 업무 화면과 백엔드 연결을 중요하게 봅니다.
+				</p>
+			</section>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+			<section id="contact" class="panel contact-panel">
+				<div>
+					<p class="eyebrow">Contact</p>
+					<h2>공개 연락 채널</h2>
+					<p>포트폴리오와 업무 관련 연락은 아래 채널로 확인할 수 있습니다.</p>
+				</div>
+				<ul class="contact-list">
+					<li>
+						<span>Email</span>
+						<a href="mailto:hcs88cp@gmail.com">hcs88cp@gmail.com</a>
+					</li>
+					<li>
+						<span>GitHub</span>
+						<a href="https://github.com/hcscat" target="_blank" rel="noreferrer">github.com/hcscat</a>
+					</li>
+					<li>
+						<span>LinkedIn</span>
+						<a href="https://www.linkedin.com/in/changsikhwang/" target="_blank" rel="noreferrer">
+							linkedin.com/in/changsikhwang
+						</a>
+					</li>
+				</ul>
+			</section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+			<section>
+				<h2>핵심 포지션</h2>
+				<ul>
+					<li>Java, Spring, MyBatis 기반 업무 시스템 개발</li>
+					<li>Nexacro, exBuilder6, SAP UI5/Fiori 기반 엔터프라이즈 UI 운영개발</li>
+					<li>공공 시스템, 이커머스 운영개발, 백오피스/관리자 화면 경험</li>
+					<li>QA/QC 경험을 기반으로 한 테스트, 이슈 추적, 예외 케이스 관점</li>
+				</ul>
+			</section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+			<section>
+				<h2>경력 타임라인</h2>
+				<div class="timeline">
+					<div>
+						<strong>2025.10 ~ 현재</strong>
+						<p>SAP UI5/Fiori, JavaScript, CSS, Git 기반 기업 솔루션 운영개발</p>
+					</div>
+					<div>
+						<strong>2024.12 ~ 2025.08</strong>
+						<p>공공기관 업무관리시스템 구축, exBuilder6 + Java/Spring/Oracle</p>
+					</div>
+					<div>
+						<strong>2022.02 ~ 2024.08</strong>
+						<p>대형 이커머스몰 운영개발, 주문/결제, PG 연동, 배송채널, Nexacro/JSP/Java/Spring/MSSQL</p>
+					</div>
+					<div>
+						<strong>2016.11 ~ 2021.08</strong>
+						<p>솔루션/웹/앱 QA, Linux/DB 환경 검증, 테스트케이스, 이슈 추적</p>
+					</div>
+				</div>
+			</section>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+			<section>
+				<h2>기술 스택</h2>
+				<ul class="stack-list">
+					<li>Java</li>
+					<li>Spring</li>
+					<li>MyBatis</li>
+					<li>JavaScript</li>
+					<li>JSP</li>
+					<li>Nexacro</li>
+					<li>exBuilder6</li>
+					<li>SAP UI5/Fiori</li>
+					<li>Oracle</li>
+					<li>MSSQL</li>
+					<li>Linux</li>
+					<li>Shell Script</li>
+				</ul>
+			</section>
+
+			<section class="note-box">
+				<h2>공개 범위</h2>
+				<p>
+					이 사이트는 공개용 포트폴리오이므로 연락처, 상세 주소, 업무 시스템 화면, 고객사 내부
+					정보는 제외하거나 비식별화합니다. 세부 이력서와 경력기술서는 입사지원 문서에서 별도로
+					관리합니다.
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

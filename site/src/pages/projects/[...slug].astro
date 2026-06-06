@@ -1,0 +1,66 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+
+export async function getStaticPaths() {
+	const projects = await getCollection('projects');
+	return projects.map((project) => ({
+		params: { slug: project.id },
+		props: project,
+	}));
+}
+
+type Props = CollectionEntry<'projects'>;
+
+const project = Astro.props;
+const { Content } = await render(project);
+---
+
+<!doctype html>
+<html lang="ko">
+	<head>
+		<BaseHead title={`${project.data.title} | HCS Portfolio`} description={project.data.description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<article class="prose">
+				<header class="page-heading">
+					<p class="eyebrow">{project.data.period}</p>
+					<h1>{project.data.title}</h1>
+					<p class="lead">{project.data.description}</p>
+				</header>
+
+				<section class="project-meta">
+					<div>
+						<strong>역할</strong>
+						<p>{project.data.role}</p>
+					</div>
+					<div>
+						<strong>기술</strong>
+						<p>{project.data.stack.join(', ')}</p>
+					</div>
+				</section>
+
+				<section>
+					<h2>핵심 요약</h2>
+					<ul>
+						{project.data.highlights.map((highlight) => <li>{highlight}</li>)}
+					</ul>
+				</section>
+
+				{project.data.confidentialityNote && (
+					<section class="note-box">
+						<h2>공개 범위</h2>
+						<p>{project.data.confidentialityNote}</p>
+					</section>
+				)}
+
+				<Content />
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
