@@ -30,7 +30,6 @@ const projects = defineCollection({
 		highlights: z.array(z.string()),
 		order: z.number(),
 		featured: z.boolean().default(false),
-		confidentialityNote: z.string().optional(),
 	}),
 });
 

@@ -51,13 +51,6 @@ const { Content } = await render(project);
 					</ul>
 				</section>
 
-				{project.data.confidentialityNote && (
-					<section class="note-box">
-						<h2>공개 범위</h2>
-						<p>{project.data.confidentialityNote}</p>
-					</section>
-				)}
-
 				<Content />
 			</article>
 		</main>

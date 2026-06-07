@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>2026-06-08 공개 포트폴리오 정리 작업 보고서</title>
+		<style>
+			body {
+				max-width: 860px;
+				margin: 0 auto;
+				padding: 48px 24px 72px;
+				color: #222;
+				font-family:
+					"Pretendard", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo",
+					system-ui, sans-serif;
+				line-height: 1.75;
+			}
+			h1,
+			h2 {
+				color: #111;
+				line-height: 1.3;
+			}
+			h1 {
+				margin-bottom: 1.2em;
+				font-size: 2rem;
+			}
+			h2 {
+				margin-top: 2em;
+				border-top: 1px solid #ddd;
+				padding-top: 1em;
+				font-size: 1.25rem;
+			}
+			ul,
+			ol {
+				padding-left: 1.4em;
+			}
+			code {
+				padding: 0.15em 0.35em;
+				border: 1px solid #ddd;
+				background: #f7f7f7;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>2026-06-08 공개 포트폴리오 정리 작업 보고서</h1>
+
+		<h2>작업 목적</h2>
+		<p>
+			GitHub Pages 웹 포트폴리오를 외부 방문자, 관계자, 인사담당자가 읽는 공개 문서
+			기준으로 재검토했다. 프로젝트 설명은 작성자의 경력과 수행 업무를 직접 보여주는
+			내용으로 정리하고, 내부 검토 메모처럼 보이는 문구는 제거했다.
+		</p>
+
+		<h2>확인한 현재 상태</h2>
+		<ul>
+			<li>원격 <code>main</code> 최신 커밋 <code>c410343</code>까지 반영된 상태에서 작업을 시작했다.</li>
+			<li>다른 세션에서 Home, About, Note, 프로젝트 콘텐츠 파일들이 업데이트되어 있었다.</li>
+			<li>별도 이력/포트폴리오 준비 자료의 공개 원고와 판단표를 참고하되, 웹 공개 화면에는 더 보수적인 표현을 적용했다.</li>
+		</ul>
+
+		<h2>주요 수정</h2>
+		<ul>
+			<li>Projects 상세 화면에서 프로젝트별 <code>공개 범위</code> 섹션을 제거했다.</li>
+			<li>프로젝트 콘텐츠의 <code>confidentialityNote</code> 필드를 제거하고 스키마에서도 삭제했다.</li>
+			<li>회사명, 고객명, 내부 URL, 내부망, 실제 데이터처럼 공개 화면에서 불필요한 세부 식별 정보를 일반화했다.</li>
+			<li>내부 검토나 AI 조언처럼 보일 수 있는 문구를 수행 업무 중심 문장으로 바꿨다.</li>
+			<li>Projects 목록을 현재 진행 중인 SAP UI5/Fiori 운영개발을 첫 번째로 두고, 이후 최근순으로 정렬했다.</li>
+			<li>Note와 사이트 설명에서 AI 작업 로그처럼 보이는 표현을 줄이고, 개발 작업 방식과 경력 정리 기록으로 바꿨다.</li>
+		</ul>
+
+		<h2>프로젝트 목록 순서</h2>
+		<ol>
+			<li>SAP UI5/Fiori 운영개발</li>
+			<li>로컬 업무 자동화 허브</li>
+			<li>공공 업무 시스템 구축</li>
+			<li>이커머스 운영개발</li>
+			<li>소프트웨어 QA/테스트</li>
+		</ol>
+
+		<h2>검토 결과</h2>
+		<ul>
+			<li>공개 화면에 회사명, 고객명, 내부 URL, 로컬 경로, 프로젝트별 공개 범위 블록이 남아 있지 않은지 검색했다.</li>
+			<li>프로젝트 상세 페이지 생성 HTML에서도 특정 회사/고객명, AI 조언성 문구가 노출되지 않는 것을 확인했다.</li>
+			<li><code>npm run build</code>로 Astro 빌드와 콘텐츠 스키마 검증을 완료했다.</li>
+		</ul>
+
+		<h2>남은 참고 사항</h2>
+		<p>
+			이력서/PDF/PPT에는 더 상세한 회사명이나 프로젝트명이 들어갈 수 있지만, 웹
+			포트폴리오는 검색 가능한 공개 사이트이므로 도메인과 수행 역할 중심으로 유지하는
+			편이 안전하다. 추후 프로젝트별 캡처나 이미지가 추가될 경우 실제 업무 화면, 운영
+			데이터, 내부 시스템 식별 정보가 포함되지 않는지 별도 검토가 필요하다.
+		</p>
+	</body>
+</html>
